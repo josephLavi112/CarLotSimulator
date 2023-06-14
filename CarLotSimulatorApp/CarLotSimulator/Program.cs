@@ -26,9 +26,11 @@ namespace CarLotSimulator
             lambo.EngineNoise = "vrrrrooom";
             lambo.HonkNoise = "boom";
             lambo.IsDriveable = false;
-
             lambo.MakeEngineNoise();
             lambo.MakeHonkNoise();
+
+            Console.WriteLine($"number of cars at this point {CarLot._numberOfCars}");
+
             carlot.CarList.Add(lambo);
 
             Car ford = new Car();
@@ -38,9 +40,11 @@ namespace CarLotSimulator
             ford.EngineNoise = "clunk clunk";
             ford.HonkNoise = "buhhh buhhhh";
             ford.IsDriveable = true;
-
             ford.MakeEngineNoise();
             ford.MakeHonkNoise();
+
+            Console.WriteLine($"number of cars at this point {CarLot._numberOfCars}");
+
             carlot.CarList.Add(ford);
 
             Car vw = new Car();
@@ -61,6 +65,7 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
             Car ford2 = new Car()
+
             {
                 Year = 1980,
                 Make = "Ford",
@@ -70,15 +75,21 @@ namespace CarLotSimulator
                 IsDriveable = true,
 
             };
+           
+            Console.WriteLine($"number of cars at this point {CarLot._numberOfCars}");
 
             ford.MakeEngineNoise();
             ford.MakeHonkNoise();
 
             Car lambo2 = new Car(2010, "Lamborghini", "Gallardo", "vrrrrooom", "boom", false);
+
+
             {
                 lambo2.MakeEngineNoise();
                 lambo2.MakeHonkNoise();
             }
+            
+            Console.WriteLine($"number of cars at this point {CarLot._numberOfCars}");
 
             //*************BONUS X 2*************//
 
@@ -87,12 +98,12 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            foreach (var Car in carlot.CarList) 
+            foreach (var Car in carlot.CarList)
             {
                 Console.WriteLine($"{Car.Year} {Car.Make} {Car.Model}");
             }
 
-          
+
 
         }
     }
